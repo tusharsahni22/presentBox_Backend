@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_link_items",
+  "info": {
+    "displayName": "Link-Item"
+  },
+  "options": {},
+  "attributes": {
+    "lable": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

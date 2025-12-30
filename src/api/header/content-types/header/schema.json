@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "headers",
+  "info": {
+    "singularName": "header",
+    "pluralName": "headers",
+    "displayName": "Header"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "MenuDescription": {
+      "type": "component",
+      "component": "shared.menu-description",
+      "repeatable": false
+    },
+    "MenuLink": {
+      "type": "component",
+      "component": "shared.link-item",
+      "repeatable": true
+    },
+    "grid": {
+      "type": "enumeration",
+      "required": true,
+      "default": "heading_image_image",
+      "enum": [
+        "heading_menu_item_image",
+        "heading_image_image",
+        "menu_item_menu_item_menu_item"
+      ]
+    },
+    "Img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

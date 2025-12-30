@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_menu_descriptions",
+  "info": {
+    "displayName": "MenuDescription"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}
