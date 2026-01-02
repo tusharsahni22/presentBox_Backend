@@ -11,18 +11,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "MenuDescription": {
+    "menuDescription": {
       "type": "component",
       "component": "shared.menu-description",
       "repeatable": false
-    },
-    "MenuLink": {
-      "type": "component",
-      "component": "shared.link-item",
-      "repeatable": true
     },
     "grid": {
       "type": "enumeration",
@@ -34,7 +29,7 @@
         "menu_item_menu_item_menu_item"
       ]
     },
-    "Img": {
+    "img": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -43,6 +38,11 @@
         "videos",
         "audios"
       ]
+    },
+    "navlink": {
+      "type": "component",
+      "component": "shared.multi-menu-link",
+      "repeatable": true
     }
   }
 }

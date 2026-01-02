@@ -5,11 +5,11 @@
   },
   "options": {},
   "attributes": {
-    "Heading": {
+    "heading": {
       "type": "string",
       "required": true
     },
-    "Description": {
+    "description": {
       "type": "text",
       "required": true
     }

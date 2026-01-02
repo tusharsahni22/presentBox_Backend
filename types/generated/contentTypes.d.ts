@@ -621,7 +621,41 @@ export interface ApiFooterFooter extends Struct.CollectionTypeSchema {
       'api::footer.footer'
     > &
       Schema.Attribute.Private;
+    newsletter: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFooterrFooterr extends Struct.SingleTypeSchema {
+  collectionName: 'footerrs';
+  info: {
+    displayName: 'Footerr';
+    pluralName: 'footerrs';
+    singularName: 'footerr';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footerr.footerr'
+    > &
+      Schema.Attribute.Private;
+    newsletter: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    publishedAt: Schema.Attribute.DateTime;
+    section: Schema.Attribute.Component<'shared.footer-nav', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -683,19 +717,19 @@ export interface ApiHeaderHeader extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'heading_image_image'>;
-    Img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::header.header'
     > &
       Schema.Attribute.Private;
-    MenuDescription: Schema.Attribute.Component<
+    menuDescription: Schema.Attribute.Component<
       'shared.menu-description',
       false
     >;
-    MenuLink: Schema.Attribute.Component<'shared.link-item', true>;
-    Name: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    navlink: Schema.Attribute.Component<'shared.multi-menu-link', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1219,6 +1253,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::footer.footer': ApiFooterFooter;
+      'api::footerr.footerr': ApiFooterrFooterr;
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
       'plugin::content-releases.release': PluginContentReleasesRelease;

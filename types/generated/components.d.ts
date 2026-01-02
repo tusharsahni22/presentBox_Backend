@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedFooterNav extends Struct.ComponentSchema {
+  collectionName: 'components_shared_footer_navs';
+  info: {
+    displayName: 'Footer-nav';
+  };
+  attributes: {
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    item: Schema.Attribute.Component<'shared.link-item', true> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface SharedLinkItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_link_items';
   info: {
@@ -28,8 +40,18 @@ export interface SharedMenuDescription extends Struct.ComponentSchema {
     displayName: 'MenuDescription';
   };
   attributes: {
-    Description: Schema.Attribute.Text & Schema.Attribute.Required;
-    Heading: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedMultiMenuLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_multi_menu_links';
+  info: {
+    displayName: 'Multi_MenuLink';
+  };
+  attributes: {
+    navlinks: Schema.Attribute.Component<'shared.link-item', true>;
   };
 }
 
@@ -87,9 +109,11 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.footer-nav': SharedFooterNav;
       'shared.link-item': SharedLinkItem;
       'shared.media': SharedMedia;
       'shared.menu-description': SharedMenuDescription;
+      'shared.multi-menu-link': SharedMultiMenuLink;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;

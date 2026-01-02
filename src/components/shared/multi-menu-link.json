@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_multi_menu_links",
+  "info": {
+    "displayName": "Multi_MenuLink"
+  },
+  "options": {},
+  "attributes": {
+    "navlinks": {
+      "type": "component",
+      "component": "shared.link-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
