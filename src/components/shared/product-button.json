@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_product_buttons",
+  "info": {
+    "displayName": "productButton",
+    "icon": "arrowDown"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

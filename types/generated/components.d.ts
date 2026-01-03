@@ -55,6 +55,18 @@ export interface SharedMultiMenuLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedProductButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_product_buttons';
+  info: {
+    displayName: 'productButton';
+    icon: 'arrowDown';
+  };
+  attributes: {
+    color: Schema.Attribute.String & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes';
   info: {
@@ -114,6 +126,7 @@ declare module '@strapi/strapi' {
       'shared.media': SharedMedia;
       'shared.menu-description': SharedMenuDescription;
       'shared.multi-menu-link': SharedMultiMenuLink;
+      'shared.product-button': SharedProductButton;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;

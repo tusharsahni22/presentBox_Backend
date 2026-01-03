@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "category_cards",
+  "info": {
+    "singularName": "category-card",
+    "pluralName": "category-cards",
+    "displayName": "CategoryCard"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "variant": {
+      "type": "enumeration",
+      "required": true,
+      "default": "big",
+      "enum": [
+        "big",
+        "reactangle",
+        "square"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.product-button",
+      "repeatable": true,
+      "required": true
+    }
+  }
+}
