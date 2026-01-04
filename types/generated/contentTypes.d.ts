@@ -636,38 +636,6 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiFooterFooter extends Struct.CollectionTypeSchema {
-  collectionName: 'footers';
-  info: {
-    displayName: 'Footer';
-    pluralName: 'footers';
-    singularName: 'footer';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Heading: Schema.Attribute.String;
-    item: Schema.Attribute.Component<'shared.link-item', true>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::footer.footer'
-    > &
-      Schema.Attribute.Private;
-    newsletter: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<true>;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiFooterrFooterr extends Struct.SingleTypeSchema {
   collectionName: 'footerrs';
   info: {
@@ -1290,7 +1258,6 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category-card.category-card': ApiCategoryCardCategoryCard;
       'api::category.category': ApiCategoryCategory;
-      'api::footer.footer': ApiFooterFooter;
       'api::footerr.footerr': ApiFooterrFooterr;
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
