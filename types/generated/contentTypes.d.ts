@@ -639,7 +639,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
 export interface ApiFooterrFooterr extends Struct.SingleTypeSchema {
   collectionName: 'footerrs';
   info: {
-    displayName: 'Footerr';
+    displayName: 'Footer';
     pluralName: 'footerrs';
     singularName: 'footerr';
   };
