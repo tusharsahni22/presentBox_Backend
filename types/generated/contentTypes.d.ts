@@ -579,7 +579,7 @@ export interface ApiCategoryCardCategoryCard
     draftAndPublish: true;
   };
   attributes: {
-    button: Schema.Attribute.Component<'shared.product-button', true> &
+    button: Schema.Attribute.Component<'shared.product-button', false> &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
